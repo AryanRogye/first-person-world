@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://qy2poamp3336"]
+
+[ext_resource type="PackedScene" uid="uid://qgyumy0oo2hf" path="res://scenes/Sky/cycle.tscn" id="1_jfbxu"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_mpufm"]
+[ext_resource type="Script" path="res://scripts/cycle.gd" id="2_3a043"]
+[ext_resource type="PackedScene" uid="uid://bocgci3854bhj" path="res://scenes/Map.tscn" id="2_fuuwk"]
+[ext_resource type="PackedScene" uid="uid://bqgb7hnm5xyym" path="res://scenes/Player.tscn" id="2_g6tmk"]
+[ext_resource type="PackedScene" uid="uid://ddlfmifi3080r" path="res://scenes/ui.tscn" id="3_5oj7u"]
+[ext_resource type="PackedScene" uid="uid://b42mcas3dljou" path="res://scenes/Menu/PauseMenu.tscn" id="7_3hhqo"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_mpufm")
+
+[node name="Cycle" parent="." instance=ExtResource("1_jfbxu")]
+script = ExtResource("2_3a043")
+
+[node name="Map" parent="." instance=ExtResource("2_fuuwk")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="SpotLights" type="Node3D" parent="Map"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Map/SpotLights"]
+transform = Transform3D(-0.0875067, 0.99549, -0.0366442, 0.0542733, 0.041495, 0.997664, 0.994684, 0.0853135, -0.0576596, -2.45935, 1.03418, -8.64667)
+light_color = Color(1, 1, 0.568627, 1)
+light_energy = 0.5
+shadow_enabled = true
+shadow_bias = 0.769
+spot_range = 6.8969
+spot_attenuation = -0.7
+spot_angle = 37.1258
+spot_angle_attenuation = 1.31951
+
+[node name="Player" parent="." instance=ExtResource("2_g6tmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3059, 1.15603, -3.61671)
+
+[node name="UI" parent="." instance=ExtResource("3_5oj7u")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_3hhqo")]

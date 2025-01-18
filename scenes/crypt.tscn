@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://wiq8mv482f6p"]
+
+[ext_resource type="PackedScene" uid="uid://d0ekbuh67ylw2" path="res://assets/City/base.gltf" id="1_jl1wa"]
+
+[node name="crypt" type="StaticBody3D"]
+
+[node name="base2" parent="." instance=ExtResource("1_jl1wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0764989, 0.0266757, 0.205802)

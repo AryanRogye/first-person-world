@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://b42mcas3dljou"]
+
+[ext_resource type="Script" path="res://scripts/Pause_Menu.gd" id="1_f2ye4"]
+[ext_resource type="Shader" path="res://shaders/pause_menu.gdshader" id="1_q1byn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_syr3c"]
+shader = ExtResource("1_q1byn")
+shader_parameter/blur = 1.508
+shader_parameter/brightness = 0.85
+
+[sub_resource type="SystemFont" id="SystemFont_xeqp2"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_ke7kv"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+
+[node name="PauseMenu" type="ColorRect"]
+material = SubResource("ShaderMaterial_syr3c")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f2ye4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 9
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_xeqp2")
+theme_override_font_sizes/font_size = 64
+text = "Pause Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="resume" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_ke7kv")
+theme_override_font_sizes/font_size = 25
+text = "resume"
+
+[node name="options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 60)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_ke7kv")
+theme_override_font_sizes/font_size = 25
+text = "Options"
+
+[node name="quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 60)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_ke7kv")
+theme_override_font_sizes/font_size = 25
+text = "Quit"
