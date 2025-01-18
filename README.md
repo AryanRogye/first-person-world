@@ -1,11 +1,18 @@
-# Car-Demo
+# GTA Clone Project
 
-A simple car demo project to help you make your own cars in godot 4.0 .
+This is a clone of GTA made in Godot. Below are some screenshots of the project.
 
-Features:
-       A basic car 
-       Dynamic camera
-       GLTF models of cars and wheel
-       Uses inheritance to let you quickly make multiple versions easily 
-       
-       
+## Screenshots
+
+### Screenshot 1
+![Game Screenshot 1](scrn1.png "Screenshot 1")
+
+### Screenshot 2
+![Game Screenshot 2](scrn2.png "Screenshot 2")
+
+---
+
+## How to Run
+
+1. Open the project in Godot.
+2. Click the "Play" button to run the game.
